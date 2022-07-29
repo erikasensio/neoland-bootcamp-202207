@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body, 
+main
+ {
+    margin: 0;
+    height: 100%!important;
+    width: 100%;
+}
+
+html {
+    background-image: url(img/1483.jpg);
+    font-family: 'Indie Flower';
+    
+}
+
+.body-forms, .page-login, .page-register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.title {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: white;
+    margin: 0;
+}
+
+header{
+    left:0;
+    align-items: center;
+    max-height: 7%;
+    position: fixed;
+    display: flex;
+    top: 0px;
+    background-color: white;
+    width: 100%;
+    top: 0;
+}
+
+footer{
+    height: 7%;
+    position: fixed;
+    display: flex;
+    background-color: white;
+    width: 100%;
+    bottom: 0;
+}
+
+.homeTitle {
+    font-size: 20px;
+    min-width: 70%;
+    text-align: center;
+
+}
+
+ a .hamburgerMenu-icon{
+    height: auto;
+    max-width: 37%;
+    margin: 10px 30px;
+    justify-content: right;
+}
+
+
+form {
+    max-height: auto;
+    margin-top: 70px;
+    background-color: white;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+form input {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    width: 90%;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 1px solid 1px black;
+    font-family: 'Indie Flower';
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+form .submit {
+    display: flex;
+    padding: 20px 0px;
+    justify-content: center;
+}
+
+form .enlaceLogin,
+.enlaceRegistro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button{
+    font-size: 20px;
+    font-family: Indie Flower;
+    color: white;
+    background-color: #4B4B4B;
+    border: 0px;
+    padding: 5px;
+    border-radius: 10px;
+    font-style: italic;
+    max-height: 39.5px;
+}
+
+button:hover{
+    color: black;
+    background-color: transparent;
+    border: 1px solid black;
+}
+
+.enlaceLogin, .enlaceRegistro, span{
+    text-decoration: underline; 
+}
+
+.enlaceLogin, .enlaceRegistro, span:hover{ 
+    color: #4B4B4B;
+}
+
+.enlaceLogin, .enlaceRegistro {
+    text-decoration: none;
+    color: black;
+}
+
+.off{
+    display: none!important;
+}
+
+.page-hamburgerMenu{
+    padding: 10px;
+    width: 100%;
+    height: auto;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+ul li span{
+    color: red;
+}
+
+ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+ul.list{
+    padding: 15% 0;
+    margin: 0 35px;
+    scroll-behavior: auto;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.list__item{
+    background-color:khaki;
+    margin: 10px 0px;
+    padding: 25px;
+    list-style: none;
+}
+footer{
+    left: 0;
+    justify-content: center;
+    align-items: center;
+}
+.addPost{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-style: none;
+}
+.addPostIcon{
+    display: flex;
+    text-decoration: none;
+    color: black;
+    font-style: none;
+}
+
+section.notesBlog{
+    max-height: 100%;
+    overflow-y: scroll;
+}
+
+main.home1{
+    max-height:100%;
+}
+
+.page-newNote{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+textarea.newNoteText{
+    padding: 30px;
+    width: 100%;
+    height: 100%;
+    margin: 30px 0px;
+    background-color: rgb(240, 230, 140);
+    font-family: "Indie Flower";
+    resize: none;
+    outline: none;
+    font-size: 16px;
+}
+
+
+button.okButton {
+    background-color: transparent;
+}
+
+.newNoteForm{
+    width: 100%;
+    background-color: transparent;
+    margin: 0;
+}

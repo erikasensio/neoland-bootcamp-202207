@@ -1,6 +1,6 @@
 // array = [1, 2, 10, 18, 23]
 // function masDiez(element) {
-    
+
 //     return element > 10
 // }
 

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es_ES">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <title>App</title>
+</head>
+
+<body>
+
+    <main class="page-login">
+        <h1 class="title">MI PRIMERA APP</h1>
+        <h2 class="subtitle">Inicio de sesión</h2>
+
+        <form class="form-login">
+            <div class="email">
+                <label for="email">Correo electrónico:</label>
+                <input name="email" type="email" placeholder="Escribe tu e-mail...">
+            </div>
+
+            <div class="password">
+                <label for="password">Contraseña:</label>
+                <input name="password" type="password" placeholder="Escribe tu contraseña...">
+            </div>
+            <div class="submit">
+                <button type="submit">INICIAR SESIÓN</button>
+            </div>
+
+            <div class="enlaceRegistro">
+                <a class="enlaceRegistro" href="registro.html">¿Aún no tienes
+                    cuenta?&nbsp<span>Regístrate</span></a>
+            </div>
+        </form>
+    </main>
+
+    <main class="page-register off">
+        <h1 class="title">MI PRIMERA APP</h1>
+        <h2 class="subtitle">Inicio de sesión</h2>
+
+        <form class="form-register">
+            <div class="nombreUsuario">
+                <p>Nombre de usuario:</p>
+                <input name="name" type="text" placeholder="Escribe tu nombre de usuario...">
+            </div>
+
+            <div class="email">
+                <p>Correo electrónico:</p>
+                <input name="email" type="email" placeholder="Escribe tu e-mail...">
+            </div>
+
+            <div class="password">
+                <p>Contraseña:</p>
+                <input name="password" type="password" placeholder="Escribe tu contraseña...">
+            </div>
+
+            <div class="submit">
+                <button type="submit">REGISTRARSE</button>
+            </div>
+
+            <div class="enlaceLogin">
+                <a class="enlaceLogin" href="inicioSesion.html">¿Ya tienes cuenta?&nbsp;<span>Inicia
+                        sesión</span></a>
+            </div>
+
+        </form>
+    </main>
+
+    <main class="page-hamburgerMenu off">
+        <nav class="hamburgerMenu">
+            <ul>
+                <h1>MENÚ</h1>
+                <li><a href="">Home</a></li>
+                <li><a href="">About us</a> </li>
+                <li><a class="enlaceLogout" href="page-login.html"><span><u>Log out</u></span></a></li>
+            </ul>
+        </nav>
+    </main>
+
+    <main class="page-home1 off">
+        <header>
+            <h1 class="homeTitle">¡Hola Pepito! Bienvenido</h1>
+            <a href="page-hamburgerMenu.html" class="hamburgerMenu-icon"><img src="img/Hamburger_icon.png"
+                    class="hamburgerMenu-icon"></img></a>
+        </header>
+        <section class="notesBlog">
+            
+            <ul class="list">
+
+                <li class="list__item">Hello, Note!</li>
+
+                <li class="list__item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab sunt tempora
+                    esse eaque, maiores similique ipsam deserunt eius soluta adipisci blanditiis nobis fugiat aut
+                    nesciunt rerum porro delectus distinctio?</li>
+
+                <li class="list__item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab sunt tempora
+                    esse eaque, maiores similique ipsam deserunt eius soluta adipisci blanditiis nobis fugiat aut
+                    nesciunt rerum porro delectus distinctio?</li>
+
+                <li class="list__item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab sunt tempora
+                    esse eaque, maiores similique ipsam deserunt eius soluta adipisci blanditiis nobis fugiat aut
+                    nesciunt rerum porro delectus distinctio?</li>
+
+                <li class="list__item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab sunt tempora
+                    esse eaque, maiores similique ipsam deserunt eius soluta adipisci blanditiis nobis fugiat aut
+                    nesciunt rerum porro delectus distinctio?</li>
+            </ul>
+        </section>
+        <footer class="addPostFooter">
+            <a class="addPost" href="addNote.html">
+                <h1 class="addPostIcon">+</h1>
+            </a>
+        </footer>
+    </main>
+    <main class="page-newNote off">
+        <header>
+            <h1 class="homeTitle">¡Hola Pepito! Bienvenido</h1>
+            <a href="page-hamburgerMenu.html" class="hamburgerMenu-icon"><img src="img/Hamburger_icon.png"
+                    class="hamburgerMenu-icon"></img></a>
+        </header>
+        <form class="createNoteForm">
+        <div class="note">
+            <textarea class="newNoteText" placeholder="Escribe aqui..." rows="20"></textarea>
+        </div>
+        <footer class="newNoteFooter">
+            <button class="okButton">✔️</button>
+        </footer>
+
+        </form>
+    </main>
+    <!------------------------------------- utils -------------------------------->
+    <script src="constants.js"></script>
+    <!------------------------------------- data layer -------------------------------->
+    <script src="data/users.js"></script>
+    <script src="data/notes.js"></script>
+    <!------------------------------------- business layer -------------------------------->
+    <script src="logic/userValidation.js"></script>
+    <script src="logic/retrieveUser.js"></script>
+    <script src="logic/registerUser.js"></script>
+    <script src="logic/retrieveNotes.js"></script>
+    <script src="logic/createNote.js"></script>
+    <!------------------------------------- presentation layer -------------------------------->
+    <script src="main.js"></script>
+</body>
+
+</html>
