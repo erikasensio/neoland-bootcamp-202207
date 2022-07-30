@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Square+Peg&display=swap');
+
+* {
+    font-family: 'Square Peg', cursive;
+}
+
+a {
+    color: white;
+    font-size: 20px;
+}
+
+html,
+body {
+    background-color: grey;
+    margin: 0;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.off {
+    display: none !important;
+}
+
+.page-login,
+.page-register,
+.page-home {
+    height: 100%;
+}
+
+.page-login,
+.page-register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginForm,
+.registerForm {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginForm input,
+.registerForm input {
+    width: 150px;
+    color: black;
+    border-bottom: 2px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    margin-bottom: 20px;
+}
+
+.submitLogin,
+.submitRegister {
+    margin-bottom: 10px;
+}
+
+button {
+    margin-top: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    width: 100px;
+    height: 30px;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+}
+
+.page-home header,
+.page-home footer {
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.page-home footer {
+    bottom: 0;
+}
+
+.page-home header {
+    top: 0;
+}
+
+.noteBlog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+.list {
+    padding: 10px;
+    margin: 70px 0px;
+    width: 100%;
+}
+
+.list__item {
+    list-style: none;
+    background-color: khaki;
+    padding: 10px;
+    margin: 10px;
+}
