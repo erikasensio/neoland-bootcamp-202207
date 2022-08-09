@@ -9,7 +9,9 @@ class Play extends React.Component {
         event.preventDefault()
 
         const charTried = event.target.input.value
-        if(this.props.WordSelected.includes(charTried))
+        if(this.props.WordSelected.includes(charTried)){
+            
+        }
     }
 
 
