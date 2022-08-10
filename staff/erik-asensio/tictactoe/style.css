@@ -1,0 +1,22 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.table{
+    display: grid;
+    width: 500px;
+    height: 500px;
+    margin: 50px;
+    border: 1px solid black;
+    grid-template-columns: repeat(3,1fr);
+    
+}
+
+.board-cell{
+    display: flex;
+    border: 1px solid black;
+    gap: 1px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
