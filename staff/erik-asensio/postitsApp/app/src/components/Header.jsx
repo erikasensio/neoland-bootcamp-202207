@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import Menu from "./Menu"
 
 function Header({ name, onSettingsClick, onLogoutClick, onMenuClick, view }) {
 

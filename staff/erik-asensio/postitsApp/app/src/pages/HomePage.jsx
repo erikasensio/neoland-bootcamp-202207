@@ -1,4 +1,8 @@
 import { useState, useEffect } from "react"
+import Header from "../components/Header"
+import Loggito from "../Loggito"
+import List from "../components/List"
+import Menu from "../components/Menu"
 
 function HomePage({ onLogoutClick }) {
 
