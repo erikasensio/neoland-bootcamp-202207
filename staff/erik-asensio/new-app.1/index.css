@@ -116,16 +116,6 @@ button:hover {
     justify-content: flex-start;
 }
 
-.noteBlog-active {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow-y: scroll;
-    height: 100%;
-    margin-top: 180px;
-}
-
 .list {
     padding: 10px;
     margin: 70px 0px;
@@ -163,16 +153,13 @@ button:hover {
 }
 
 .headerContainer {
-    top: 0;
-    gap: 0;
-    position: fixed;
+    display: flex;
     flex-direction: column;
     width: 100%;
     background-color: white;
 }
 
-.headerFlex {
-    width: 100%;
+.headerFlex{
     display: flex;
     flex: row;
     align-items: center;
@@ -187,13 +174,8 @@ button:hover {
     z-index: -1;
 }
 
-.menu-panel__list-item {
+.menu-panel__list-item{
     color: khaki;
-}
-
-.menu-panel__list {
-    align-items: center;
-    justify-content: center;
 }
 
 .transparent-button {
@@ -208,3 +190,4 @@ button:hover {
     background-color: transparent;
     color: khaki;
 }
+
