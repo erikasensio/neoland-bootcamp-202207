@@ -1,74 +1,49 @@
 const express = require("express")
 
-const { writeFile, readFile, readdir } = require("fs")
-
 const api = express()
+
+const registerUser = require("./logic/registerUser")
+const authenticateUser = require("./logic/authenticateUser")
 
 const jsonBodyParser = express.json()
 
 api.post("/api/users", jsonBodyParser, (req, res) => {
-    const { body: { name, email, password } } = req
-
-    readdir("./data/users", (error, files) => {
-        if (error) {
-            res.status(500).json(error.message)
-
-            return
-        }
-
-        index = 0
-        file = files[index];
-
-        (function iterate() {
-            readFile(`./data/users/${file}`, "utf8", (error, json) => {
-                if (error) {
+    try {
+        const { body: { name, email, password } } = req
+        registerUser(name, email, password, error => {
+            if (error) {
+                if (error.message.startsWith("user with email")) {
+                    res.status(409).json(error.message)
+                } else {
                     res.status(500).json(error.message)
-
-                    return
                 }
+                return
+            }
 
-                const user = JSON.parse(json)
-                if (user.email === email) {
-                    res.status(401).json(`user with email ${email} already exists`)
-
-                    return
-                }
-
-                index++
-
-                if (index < files.length) {
-
-                    file = files[index]
-
-                    iterate()
-
-                    return
-                }
-
-                const newUser = {
-                    id: `id-${Date.now()}`,
-                    name,
-                    email,
-                    password
-                }
-
-                const newJson = newUser.stringify(newUser)
-
-                writeFile(`./data/users/${newUser.id}.json`, newJson, "utf8", error => {
-                    if (error) {
-                        res.status(500).json(error.message)
-                        return
-                    }
-                    res.status(201).send()
-                })
-
-            })
-        })()
-    })
+            res.status(201).send()
+        })
+    } catch (error) {
+        res.status(500).json(error.message)
+    }
 })
 
-api.post("/api/users", jsonBodyParser, (req, res) => {
+api.post("/api/users/auth", jsonBodyParser, (req, res) => {
 
+    try {
+        const { body: { email, password } } = req;
+        authenticateUser(email, password, error => {
+            if (error) {
+                if (error.message.startsWith("credenciales incorrectas")) {
+                    res.status(401).json(error.message)
+                } else {
+                    res.status(500).json(error.message)
+                }
+            }
+            res.status(200).send()
+        })
+    } catch (error) {
+        res.status(500).json(error.message)
+    }
 })
 
 api.listen(8080, () => console.log("api started"))
