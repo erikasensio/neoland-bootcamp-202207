@@ -2,8 +2,9 @@ import "./index2.css"
 import LoginPage from "./pages/LoginPage"
 import RegisterPage from "./pages/RegisterPage"
 import HomePage from "./pages/HomePage"
-import Loggito from "./loggito"
+import Loggito from "./utils/Loggito"
 import { useState } from "react"
+import Context from "./utils/Context"
 
 function App() {
     const logger = new Loggito("App")
@@ -24,16 +25,22 @@ function App() {
         setView("login")
     }
 
+    const toggleTheme = () => {
+        document.documentElement.classList.toggle("light")
+    }
 
     logger.info("rendered")
-    if (view === "login")
-        return <LoginPage onLinkClick={handleNavToRegister} onLogIn={handleNavToHome} />
 
-    else if (view === "register")
-        return <RegisterPage onLinkClick={handleNavToLogin} onRegister={handleNavToLogin} />
 
-    else if (view === "home")
-        return <HomePage onLogoutClick={handleLogoutClick} />
+    return <Context.Provider value={{ toggleTheme, handleNavToLogin }}>
+        
+            {view === "login" && <LoginPage onLinkClick={handleNavToRegister} onLogIn={handleNavToHome} />}
+
+            {view === "register" && <RegisterPage onLinkClick={handleNavToLogin} onRegister={handleNavToLogin} />}
+
+            {view === "home" && <HomePage onLogoutClick={handleLogoutClick} />}
+        
+    </Context.Provider>
 }
 
 export default App

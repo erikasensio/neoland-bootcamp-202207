@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react"
+import Settings from "./Settings"
 import Menu from "./Menu"
+import MenuIcon from "../img/Hamburger_icon.png"
 
 function Header({ name, onSettingsClick, onLogoutClick, onMenuClick, view }) {
 
@@ -7,9 +8,10 @@ function Header({ name, onSettingsClick, onLogoutClick, onMenuClick, view }) {
     return <div className="headerContainer">
         <div className="headerFlex">
         <h1 className="title">Hello, {name}!</h1>
-        <a href="#" className="hamburgerMenu-icon" onClick={onMenuClick}><img src="./img/Hamburger_icon.png" className="hamburgerMenu-icon"/></a>
+        {view === "menu"? <a href="menu.html" className="hamburgerMenu-icon" onClick={onMenuClick}><p>X</p></a> : <a href="menu.html" className="hamburgerMenu-icon" onClick={onMenuClick}><img alt="" src={MenuIcon} className="hamburgerMenu-icon"/></a>}
         </div>
         {view === "menu" && <Menu onSettingsClick={onSettingsClick} onLogoutClick={onLogoutClick}/>}
+        {view === "settings" && <Settings onLogout={onLogoutClick}/>}
     </div>
     }
 

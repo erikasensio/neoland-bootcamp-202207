@@ -1,11 +1,11 @@
-import Loggito from "../Loggito"
+import Loggito from "../utils/Loggito"
 
 function List({view, onDeleteNote, notes, onUpdateNote}) {
     const logger = new Loggito("List")
 
 
-    return <section className={`${view === "menu"? "noteBlog-active":"noteBlog"}`}>
-        <ul className="list">
+    return <section className="noteBlog">
+        <ul className={`${view === "menu" && "list-active"||view === "settings" && "list-activeSettings"||"list"}`}>
             {notes && notes.map(note => <li className="list__item" key={note.id}>
                 <button className="list__item-delete-button" onClick={() => onDeleteNote(note.id)}>x</button>
 

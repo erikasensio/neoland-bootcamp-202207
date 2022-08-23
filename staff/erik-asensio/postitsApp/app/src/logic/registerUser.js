@@ -1,4 +1,4 @@
-import Constants from "../constants"
+import { EMAIL_REGEX } from "../Constants"
 
 function registerUser(name, email, password, callback) {
     //VALIDATE INPUTS
@@ -13,7 +13,7 @@ function registerUser(name, email, password, callback) {
     if (!EMAIL_REGEX.test(email)) throw new Error('email is not valid')
 
     //PASSWORD
-    if (typeof password !== "string") throw typeError("password is not a string")
+    if (typeof password !== "string") throw TypeError("password is not a string")
     if (password.length < 6) throw Error("password is too short")
 
     //CALLBACK

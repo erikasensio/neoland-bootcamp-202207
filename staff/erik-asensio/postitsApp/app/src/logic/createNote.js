@@ -1,6 +1,6 @@
 function createNote(token, callback) {
     //TOKEN
-    if (typeof token !== "string") throw typeError("token is not a string")
+    if (typeof token !== "string") throw TypeError("token is not a string")
     if (token.trim === 0) throw Error("token is blank or empty")
 
     //CALLBACK

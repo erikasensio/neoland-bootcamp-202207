@@ -1,8 +1,14 @@
 import { useState, useEffect } from "react"
 import Header from "../components/Header"
-import Loggito from "../Loggito"
+import Loggito from "../utils/Loggito"
 import List from "../components/List"
 import Menu from "../components/Menu"
+
+import retrieveUser from "../logic/retrieveUser"
+import retrieveNotes from "../logic/retrieveNotes"
+import createNote from "../logic/createNote"
+import updateNotes from "../logic/updateNotes"
+import deleteNote from "../logic/deleteNote"
 
 function HomePage({ onLogoutClick }) {
 
@@ -121,13 +127,18 @@ function HomePage({ onLogoutClick }) {
         setView("settings")
     }
 
-    const handleMenuClick = () => {
+    const handleMenuClick = event => {
+        event.preventDefault()
+
         view === "menu" ? setView("close") : setView("menu")
         logger.debug("menu rendered")
 
         if (view === "menu") {
             <Menu onLogoutClick={onLogoutClick} onSettingsClick={handleSettingsClick}/>
+        }else if(view === "close"){
+            
         }
+
     }
 
     return name ?

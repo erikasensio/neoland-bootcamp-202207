@@ -1,3 +1,6 @@
+import Loggito from "../utils/Loggito"
+import authenticateUser from "../logic/authenticateUser"
+
 function LoginPage({onLinkClick, onLogIn}) {
     const logger = new Loggito('LoginPage')
 

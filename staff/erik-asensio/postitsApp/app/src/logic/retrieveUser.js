@@ -2,7 +2,7 @@ function retrieveUser(token, callback) {
     //VALIDATE INPUTS
 
     //TOKEN
-    if (typeof token !== "string") throw typeError("token is not a string")
+    if (typeof token !== "string") throw TypeError("token is not a string")
     if (token.trim === 0) throw Error("token is blank or empty")
 
     //CALLBACK

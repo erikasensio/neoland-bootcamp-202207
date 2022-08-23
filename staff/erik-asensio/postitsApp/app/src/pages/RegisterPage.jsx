@@ -1,3 +1,6 @@
+import Loggito from "../utils/Loggito"
+import registerUser from "../logic/registerUser"
+
 function RegisterPage({onLinkClick, onRegister}) {
     const logger = new Loggito('LoginPage')
 
@@ -40,7 +43,6 @@ function RegisterPage({onLinkClick, onRegister}) {
 
     return (<main className="page-register">
 
-        <h1 className="loginTitle"></h1>
         <form className="registerForm" onSubmit={handleFormSubmit}>
 
             <label htmlFor="name">name:</label>
