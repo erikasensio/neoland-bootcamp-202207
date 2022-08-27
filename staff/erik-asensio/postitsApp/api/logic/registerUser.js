@@ -1,80 +1,24 @@
-const { writeFile, readdir, readFile } = require('fs')
+const { User } = require("../models/Schemas")
+const { DuplicityError, SystemError } = require("../errors")
+const { validateText, validateEmail, validatePassword, validateCallback } = require("../validators")
 
-function registerUser(name, email, password, callback) {
-    const folder = "./data/users"
-    
-    readdir(folder, (error, files) => {
-        if (error) {
-            callback(error)
+function registerUser(name, email, password) {
+    validateText(name, 'name')
+    validateEmail(email)
+    validatePassword(password)
 
-            return
-        }
-
-        index = 0
-        file = files[index];
-
-        if (files.length === 0) {
-            writeUser({ name, email, password }, error => {
-                if (error) {
-                    callback(error)
-                }
-                callback(null)
-            })
-            return
-        };
-
-        (function iterate() {
-
-            readFile(`${folder}/${file}`, "utf8", (error, json) => {
-                if (error) {
-                    callback(error)
-
-                    return
-                }
-
-                const user = JSON.parse(json)
-                if (user.email === email) {
-                    callback(new Error(`user with email: ${user.email} already exists`))
-
-                    return
-                }
-
-                index++
-
-                if (index < files.length) {
-                    file = files[index]
-                    iterate()
-                    return
-                }
-
-                writeUser({ name, email, password }, error => {
-                    if (error) {
-                        callback(error)
-                    }
-                    callback(null)
-                })
-            })
-        })()
-    })
-}
-
-function writeUser({ name, email, password }, callback) {
-    const newUser = {
-        id: `id-${Date.now()}`,
+    return User.create({
         name,
         email,
         password
-    }
-
-    const newJson = JSON.stringify(newUser)
-
-    writeFile(`./data/users/${newUser.id}.json`, newJson, "utf8", error => {
-        if (error) {
-            callback(error)
-            return
-        }
-        callback(null)
     })
+        .then(user => { })
+        .catch(error => {
+            if (error.code === 11000)
+                throw new DuplicityError('user already exists')
+
+            throw new SystemError(error.message)
+        })
 }
 
 module.exports = registerUser
