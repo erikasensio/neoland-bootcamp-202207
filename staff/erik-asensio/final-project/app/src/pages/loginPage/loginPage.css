@@ -1,0 +1,76 @@
+.loginPage {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginIntro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginTitle {
+    font-size: 86px;
+    margin: 10px 0;
+}
+
+.loginSubtitle {
+    font-size: 35px;
+    margin: 0;
+    margin-bottom: 100px;
+}
+
+.loginForm {
+    display: flex;
+    gap: 50px;
+    width: 75%;
+}
+
+.loginForm>input {
+    font-size: 15px;
+    width: 100%;
+    text-align: center;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    padding: 7px;
+}
+
+.loginForm-submit {
+    color: white;
+    font-size: 20px;
+    background-color: #1A5AFF;
+    width: 65%;
+    border: none;
+    border-radius: 32px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.loginRegister {
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginRegister-text {
+    font-size: 13px;
+}
+
+.loginRegister-anchor {
+    font-size: 20px;
+    color: black;
+}

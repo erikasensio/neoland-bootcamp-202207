@@ -1,0 +1,42 @@
+.mobileMenu {
+    position: fixed;
+    bottom: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.mobileMenuContainer {
+    width: 75%;
+    background-color: #D9D9D9;
+    padding: 15px 30px;
+    border-radius: 24px;
+}
+
+.mobileMenu-menu {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.mobileMenu-menu--addButton {
+    border: none;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-top: -60px;
+    background-color: white!important;
+}
+.mobileMenu-menu--addIcon{
+    background-color: #1A5AFF;
+    padding: 22px;
+    border-radius: 50%;
+}
+
+.mobileMenu-menu--addIcon,
+.mobileMenu-menu--homeIcon,
+.mobileMenu-menu--profileIcon{
+    width: 25px;
+    height:25px;
+}

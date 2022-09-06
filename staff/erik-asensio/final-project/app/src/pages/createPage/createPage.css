@@ -1,0 +1,131 @@
+.createPage {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.createPage-header {
+    width: 90%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.createPage-header--backIcon {
+    width: 25px;
+    height: 25px;
+}
+
+.createPage-header--title {
+    margin-right: 20;
+}
+
+.createPage-img {
+    width: 90%;
+    height: 200px;
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.createPage-img--mainImg {
+    border-radius: 24px;
+    height: 200px;
+}
+
+.createPage-img--editIcon{
+    border-radius: 24px;
+    height: 20px;
+}
+
+.createPage-panel {
+    width: 100%;
+    height: 100%;
+    background-color: grey;
+    display: flex;
+    border-radius: 24px 24px 0px 0px;
+    justify-content: flex-end;
+}
+
+.createPage-panel--form {
+    width: 100%;
+    margin: 20px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.createPage-form--input {
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: transparent;
+    width: 90%;
+}
+
+.createPage-form--nameInput,
+.createPage-form--typeInput {
+    display: flex;
+    flex-direction: column;
+    outline: none;
+}
+
+.createPage-form--label {
+    font-size: 20px;
+}
+
+.createPage-form--submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.createPage-form--submitButton {
+    color: white;
+    font-size: 20px;
+    background-color: #1A5AFF;
+    width: 65%;
+    border: none;
+    border-radius: 32px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+.createPage-form--standardTitle{
+    font-size: 20px;
+    margin-bottom: 0;
+}
+.createPage-form--standardInfo{
+    font-size: 11px;
+}
+.createPage-form--standardLabel{
+    font-size: 13px;
+}
+
+.createPage-form--standardInputs{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.createPage-form--standardInput{
+    border: 1px solid black;
+    width: 80px;
+    height: 80px;
+    background-color: transparent;
+    border-radius: 20px;
+}
+
+.createPage-form--input1,
+.createPage-form--input2,
+.createPage-form--input3{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
