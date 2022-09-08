@@ -1,25 +1,48 @@
-const five = require("johnny-five")
-const board = new five.Board
-const express = require("express")
-const api = express()
-//const jsonBodyParser = express.json()
-const fs = require('fs')
+require('dotenv').config()
 
-board.on("ready", function () {
-    // api.get("/api/led/:pin", (req, res) => {
-    //     const { params: { pin } } = req
+const { connect, disconnect } = require('mongoose')
+const { createLogger } = require('./utils')
+const logger = createLogger(module)
+const cors = require('cors')
+const { name, version } = require('../package.json')
 
-    //         blinkLed(pin)
-            
-    //         res.send(`led pin ${pin} activated`)
-    // })
-    fs.readdir('.', console.log)
-})
+//const MONGO_URL = process.env.MONGO_URL
+//const PORT = process.env.PORT
+const { env: { MONGO_URL, PORT }} = process
 
-function blinkLed(pin){
-    const led = new five.Led(pin)
+connect(MONGO_URL)
+    .then(() => {
+        logger.info('db connected')
 
-    led.blink()
-}
+        const express = require('express')
+        
+        const api = express()
+        
+        const { usersRouter, notesRouter } = require('./routes')   
+        
+        api.use(cors())
+        
+        api.get('/', (req, res) => res.send(`${name} v${version} ;)`))
 
-api.listen(8081, () => { console.log("api started") })
+        api.use('/api', usersRouter, notesRouter)
+
+        api.listen(PORT, () => logger.info(`${name} v${version} started and listening in port ${PORT}`))
+
+        process.on('SIGINT', () => {
+            if (!process.stopped) {
+                process.stopped = true
+
+                logger.info('\napi stopped')
+
+                disconnect()
+                    .then(() => {
+                        logger.info('db disconnected')
+
+                        process.exit(0)
+                    })
+            }
+        })
+    })
+    .catch(error => {
+        logger.error(error)
+    })
