@@ -1,0 +1,113 @@
+.aquoPage {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+
+.aquoPage-header {
+    width: 90%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.aquoPage-header-container2{
+    display: flex;
+
+    align-items: center;
+}
+
+.aquoPage-header--backIcon {
+    width: 25px;
+    height: 25px;
+}
+
+.aquoPage-header--title {
+    margin-right: 20px;
+}
+
+.aquoPage-img {
+    height: 55%;
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.aquoPage-img--mainImg {
+    border-radius: 24px;
+    height: 225px;
+}
+
+.aquoPage-img--editIcon {
+    border-radius: 24px;
+    height: 20px;
+}
+
+.aquoPage-panel {
+    width: 100%;
+    height: 100%;
+    background-color: grey;
+    display: flex;
+
+    align-items: center;
+    flex-direction: column;
+    border-radius: 24px 24px 0px 0px;
+    justify-content: flex-start;
+}
+.aquoPage-panel--header{
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+}
+.panel-header--delete,
+.panel-header--refresh{
+    width: 16px;
+}
+
+.aquoPage-panel--info {
+    width: 85%;
+    margin-bottom: 30px;
+}
+.panel-info--title {
+    margin-bottom: 0;
+    font-size: 20px;
+}
+.panel-info--text {
+    font-size: 9px;
+}
+
+.aquoPage-form--standardLabel {
+    font-size: 13px;
+}
+
+.aquoPage-form--standardInputs {
+    display: flex;
+    flex-direction: row;
+    width: 85%;
+    justify-content: space-between;
+}
+
+.aquoPage-form--standardInput {
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    width: 80px;
+    height: 80px;
+    background-color: transparent;
+    border-radius: 20px;
+}
+
+.aquoPage-form--input1,
+.aquoPage-form--input2,
+.aquoPage-form--input3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

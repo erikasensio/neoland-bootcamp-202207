@@ -1,4 +1,4 @@
-.loginPage {
+.registerPage {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -6,38 +6,38 @@
     align-items: center;
 }
 
-.loginIntro {
+.registerIntro {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.loginForm {
+.registerForm {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.loginTitle {
+.registerTitle {
     font-size: 86px;
     margin: 10px 0;
 }
 
-.loginSubtitle {
+.registerSubtitle {
     font-size: 35px;
     margin: 0;
     margin-bottom: 100px;
 }
 
-.loginForm {
+.registerForm {
     display: flex;
     gap: 50px;
     width: 75%;
 }
 
-.loginForm>input {
+.registerForm>input {
     font-size: 15px;
     width: 100%;
     text-align: center;
@@ -47,7 +47,7 @@
     padding: 7px;
 }
 
-.loginForm-submit {
+.registerForm-submit {
     background-color: #1A5AFF;
     width: 65%;
     border: none;
@@ -59,7 +59,7 @@
     font-size: 20px;
 }
 
-.loginRegister {
+.registerLogin {
     margin: 50px 0;
     display: flex;
     flex-direction: column;
@@ -67,11 +67,11 @@
     justify-content: center;
 }
 
-.loginRegister-text {
+.registerLogin-text {
     font-size: 13px;
 }
 
-.loginRegister-anchor {
+.registerLogin-anchor {
     font-size: 20px;
     color: black;
 }

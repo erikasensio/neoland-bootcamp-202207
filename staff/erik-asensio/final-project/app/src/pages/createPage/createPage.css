@@ -20,7 +20,7 @@
 }
 
 .createPage-header--title {
-    margin-right: 20;
+    margin-right: 20px;
 }
 
 .createPage-img {
@@ -29,19 +29,19 @@
     margin-bottom: 5%;
     display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: 20px;
 }
 
 .createPage-img--mainImg {
+    margin-left: 40px;
     border-radius: 24px;
     height: 200px;
 }
 
-.createPage-img--editIcon{
+.createPage-img--editIcon {
     border-radius: 24px;
     height: 20px;
 }
-
 .createPage-panel {
     width: 100%;
     height: 100%;
@@ -114,6 +114,9 @@
 }
 
 .createPage-form--standardInput{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 1px solid black;
     width: 80px;
     height: 80px;

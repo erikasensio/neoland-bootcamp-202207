@@ -20,7 +20,7 @@
 }
 
 .editPage-header--title {
-    margin-right: 20;
+    margin-right: 20px;
 }
 
 .editPage-img {
@@ -29,15 +29,16 @@
     margin-bottom: 5%;
     display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: 20px;
 }
 
 .editPage-img--mainImg {
+    margin-left: 40px;
     border-radius: 24px;
     height: 200px;
 }
 
-.editPage-img--editIcon{
+.editPage-img--editIcon {
     border-radius: 24px;
     height: 20px;
 }
@@ -114,6 +115,9 @@
 }
 
 .editPage-form--standardInput{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 1px solid black;
     width: 80px;
     height: 80px;

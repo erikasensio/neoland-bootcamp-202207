@@ -1,4 +1,4 @@
-import "./editPage.css"
+import "./EditPage.css"
 import backIcon from "../../img/createPage/backIcon.svg"
 import mainImg from "../../img/createPage/mainImage.png"
 import editIcon from "../../img/createPage/editIcon.svg"
@@ -7,7 +7,7 @@ import { Link } from "react-router-dom"
 function EditPage() {
     return <div className="editPage">
         <div className="editPage-header">
-            <Link to="/aquoPage"><img src={backIcon} alt="back" className="editPage-header--backIcon" /></Link>
+            <Link to="/aquo"><img src={backIcon} alt="back" className="editPage-header--backIcon" /></Link>
             <h1 className="editPage-header--title">Edit Aquo</h1>
         </div>
         <div className="editPage-img">
@@ -15,7 +15,7 @@ function EditPage() {
             <img src={editIcon} alt="" className="editPage-img--editIcon" />
         </div>
         <div className="editPage-panel">
-            <div className="editPage-panel--form">
+            <form className="editPage-panel--form">
                 <div className="editPage-form--name">
                     <label htmlFor="name" className="editPage-form--nameLabel editPage-form--label">Name:</label>
                     <input type="text" id="name" className="editPage-form--nameInput editPage-form--input" />
@@ -50,7 +50,7 @@ function EditPage() {
                 <div className="editPage-form--submit">
                     <button className="editPage-form--submitButton">Update</button>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 }

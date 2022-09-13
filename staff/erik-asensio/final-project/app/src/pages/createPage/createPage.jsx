@@ -1,4 +1,4 @@
-import "./createPage.css"
+import "./CreatePage.css"
 import backIcon from "../../img/createPage/backIcon.svg"
 import mainImg from "../../img/createPage/mainImage.png"
 import editIcon from "../../img/createPage/editIcon.svg"

@@ -1,0 +1,167 @@
+.editProfilePage {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+
+.editProfilePage-header {
+    width: 90%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.editProfilePage-header-container2{
+    display: flex;
+    align-items: center;
+}
+
+.editProfilePage-header--backIcon {
+    width: 25px;
+    height: 25px;
+}
+
+.editProfilePage-header--title {
+    margin-right: 20px;
+}
+
+.editProfilePage-img {
+    height: 55%;
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.editProfilePage-img--mainImg {
+    border-radius: 24px;
+    height: 225px;
+}
+
+.editProfilePage-img--editIcon {
+    border-radius: 24px;
+    height: 20px;
+}
+
+.editProfilePage-panel {
+    width: 100%;
+    height: 100%;
+    background-color: grey;
+    display: flex;
+
+    align-items: center;
+    flex-direction: column;
+    border-radius: 24px 24px 0px 0px;
+    justify-content: flex-start;
+}
+.editProfilePage-panel--header{
+    width: 85%;
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+.panel-header--logout{
+    width: 25px;
+}
+
+.editProfilePage-panel--info {
+    width: 85%;
+    margin-bottom: 30px;
+}
+.panel-info--title {
+    margin-bottom: 0;
+    font-size: 20px;
+}
+.panel-info--text {
+    font-size: 9px;
+}
+
+.editProfilePage-header--title {
+    margin-right: 20px;
+}
+
+.editProfilePage-img {
+    width: 90%;
+    height: 200px;
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.editProfilePage-img--mainImg {
+    margin-left: 40px;
+    border-radius: 24px;
+    height: 200px;
+}
+
+.editProfilePage-img--editIcon {
+    border-radius: 24px;
+    height: 20px;
+}
+
+.editProfilePage-panel {
+    width: 100%;
+    height: 100%;
+    background-color: grey;
+    display: flex;
+    border-radius: 24px 24px 0px 0px;
+    justify-content: flex-end;
+}
+
+.editProfilePage-panel--form {
+    width: 80%;
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.editProfilePage-form--input {
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: transparent;
+    margin-bottom: 20px;
+    width: 90%;
+    outline: none;
+}
+
+.editProfilePage-form--nameInput,
+.editProfilePage-form--typeInput {
+    display: flex;
+    flex-direction: column;
+    outline: none;
+}
+
+.editProfilePage-form--label {
+    font-size: 16px;
+}
+
+.editProfilePage-form--submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.editProfilePage-form--submitButton {
+    color: white;
+    font-size: 20px;
+    background-color: #1A5AFF;
+    width: 65%;
+    border: none;
+    border-radius: 32px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+
+
+
+
+
+
