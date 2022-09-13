@@ -7,7 +7,7 @@ const aquo = new Schema({
     },
 
     photo: {
-        type: File,
+        type: String,
     },
 
     type: {
@@ -15,5 +15,7 @@ const aquo = new Schema({
         required: true
     }
 })
+
+
 
 module.exports = aquo

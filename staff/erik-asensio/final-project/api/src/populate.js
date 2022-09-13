@@ -1,5 +1,5 @@
 const { connect, disconnect } = require('mongoose')
-const { User, aquo } = require('./models')
+const { User, Aquo } = require('./models')
 
 connect('mongodb://localhost:27017/postits')
     // .then(() => {
@@ -8,7 +8,7 @@ connect('mongodb://localhost:27017/postits')
     //         aquo.deleteMany()
     //     ])
     // })
-    .then(() => Promise.all([User.deleteMany(), aquo.deleteMany()]))
+    .then(() => Promise.all([User.deleteMany(), Aquo.deleteMany()]))
     .then(() => {
         const pepito = new User({
             name: 'Pepito Grillo',

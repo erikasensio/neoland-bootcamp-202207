@@ -2,25 +2,25 @@ const express = require('express')
 const { Router, json } = express
 const jsonBodyParser = json()
 const { registerUserHandler, authenticateUserHandler, retrieveUserHandler } = require('./users')
-const { createNoteHandler, retrieveNotesHandler, updateNoteTextHandler, searchNotesHandler } = require('./notes')
+// const { createAquoHandler, retrieveAquoHandler, updateAquoHandler, searchAquoHandler } = require('./aquos')
 
 const usersRouter = Router()
 
 usersRouter.post('/users', jsonBodyParser, registerUserHandler)
 usersRouter.post('/users/auth', jsonBodyParser, authenticateUserHandler)
 usersRouter.get('/users', retrieveUserHandler)
-// TODO usersRouter.patch('/users/email', jsonBodyParser, updateUserEmailHandler)
-// TODO usersRouter.patch('/users/password', jsonBodyParser, updateUserPasswordHandler)
-// TODO usersRouter.patch('/users/info', jsonBodyParser, updateUserInfoHandler)
+// usersRouter.patch('/users/email', jsonBodyParser, updateUserEmailHandler)
+// usersRouter.patch('/users/password', jsonBodyParser, updateUserPasswordHandler)
+// usersRouter.patch('/users/info', jsonBodyParser, updateUserInfoHandler)
 
-const notesRouter = Router()
+// const aquoRouter = Router()
 
-notesRouter.post('/notes', jsonBodyParser, createNoteHandler)
-notesRouter.get('/notes', retrieveNotesHandler)
-notesRouter.patch('/notes/:noteId', jsonBodyParser, updateNoteTextHandler)
-notesRouter.get('/notes/search', searchNotesHandler)
+// aquoRouter.post('/aquos', jsonBodyParser, createAquoHandler)
+// aquoRouter.get('/aquos', retrieveaquoHandler)
+// aquoRouter.patch('/aquos/:aquoId', jsonBodyParser, updateAquoTextHandler)
+// aquoRouter.get('/aquos/search', searchAquoHandler)
 
 module.exports = {
     usersRouter,
-    notesRouter
+    // aquoRouter
 }
