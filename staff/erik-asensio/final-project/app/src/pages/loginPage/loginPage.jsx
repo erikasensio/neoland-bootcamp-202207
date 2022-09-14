@@ -1,9 +1,8 @@
 import "./LoginPage.css"
 import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
-import authenticateUser from "../../logic/authenticateUser"
+import authenticateUser from "../../logic/users/authenticateUser"
 import Loggito from "../../utils/Loggito"
-import Context from "../../utils/Context"
 
 
 const logger = new Loggito("LoginPage")

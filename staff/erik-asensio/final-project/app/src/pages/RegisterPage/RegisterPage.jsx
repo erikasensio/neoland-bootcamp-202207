@@ -1,7 +1,7 @@
 import "./RegisterPage.css"
 import { useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom"
-import registerUser from "../../logic/registerUser"
+import registerUser from "../../logic/users/registerUser"
 import Loggito from "../../utils/Loggito"
 
 const logger = new Loggito("RegisterPage")

@@ -3,8 +3,29 @@ import backIcon from "../../img/createPage/backIcon.svg"
 import mainImg from "../../img/createPage/mainImage.png"
 import editIcon from "../../img/createPage/editIcon.svg"
 import { Link } from "react-router-dom"
+import createAquo from "../../logic/aquos/createAquo"
 
 function CreatePage() {
+
+    const handleFormSubmit = event => {
+        event.preventDefault()
+
+        const form = event.target
+
+        const name = form.name.value
+        const type = form.type.value
+        const input1 = form.input1.value
+        const input2 = form.input2.value
+        const input3 = form.input3.value
+
+        createAquo(sessionStorage.token, name, type, input1, input2, input3, error => {
+            if(error){
+                alert(error.message)
+                console.error(error.message)
+            }
+        })
+    }
+
     return <div className="createPage">
         <div className="createPage-header">
             <Link to="/"><img src={backIcon} alt="back" className="createPage-header--backIcon" /></Link>
@@ -12,10 +33,10 @@ function CreatePage() {
         </div>
         <div className="createPage-img">
             <img src={mainImg} alt="" className="createPage-img--mainImg" />
-            <img src={editIcon} alt="" className="createPage-img--editIcon"/>
+            <img src={editIcon} alt="" className="createPage-img--editIcon" />
         </div>
         <div className="createPage-panel">
-            <div className="createPage-panel--form">
+            <form className="createPage-panel--form" onSubmit={handleFormSubmit}>
                 <div className="createPage-form--name">
                     <label htmlFor="name" className="createPage-form--nameLabel createPage-form--label">Name:</label>
                     <input type="text" id="name" className="createPage-form--nameInput createPage-form--input" />
@@ -48,9 +69,9 @@ function CreatePage() {
                     </div>
                 </div>
                 <div className="createPage-form--submit">
-                <button className="createPage-form--submitButton">Create</button>
+                    <button className="createPage-form--submitButton">Create</button>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 }

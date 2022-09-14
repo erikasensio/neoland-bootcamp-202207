@@ -1,19 +1,19 @@
 import "./HomePage.css"
 import { useEffect } from "react"
 import MobileMenu from "./components/MobileMenu"
-import retrieveUser from "../../logic/retrieveUser"
-import { useState } from "react"
+import retrieveUser from "../../logic/users/retrieveUser"
 import Loggito from "../../utils/Loggito"
 import withContext from "../../utils/withContext"
+import retrieveAquos from "../../logic/aquos/retrieveAquos"
 
 const logger = new Loggito("HomePage")
 
 
 function HomePage() {
-    const [name, setName] = useState(null)
+
     useEffect(() => {
         try {
-            retrieveUser(sessionStorage.token, (error,user) => {
+            retrieveUser(sessionStorage.token, (error, user) => {
                 if (error) {
                     alert(error.message)
                     logger.error(error.message)
@@ -22,9 +22,23 @@ function HomePage() {
                     return
                 }
 
-                setName(user.name)
+
                 logger.debug(`user: ${user.name} retrieved correctly`)
+                try {
+                    retrieveAquos(sessionStorage.token, error => {
+                        if(error) {
+                            alert(error.message)
+                            logger.error(error.message)
+                        }
+                        logger.debug("aquos retrieved")
+                    })
+
+                } catch (error) {
+                    alert(error.message)
+                    logger.error(error.message)
+                }
             })
+
 
         } catch (error) {
             alert(error.message)
@@ -33,9 +47,9 @@ function HomePage() {
     }, [])
 
     return <div className="homePage">
-            <h1 className="homePageTitle">Your Aquos</h1>
-            <MobileMenu />
-        </div>
+        <h1 className="homePageTitle">Your Aquos</h1>
+        <MobileMenu />
+    </div>
 
 }
 
