@@ -1,19 +1,53 @@
 import "./ProfilePage.css"
+import { useEffect, useState } from "react"
 import backIcon from "../../img/createPage/backIcon.svg"
-import mainImg from "../../img/createPage/mainImage.png"
-import editIcon from "../../img/createPage/editIcon.svg"
+import mainImg from "../../img/profilePage/profileImg.webp"
 import logoutIcon from "../../img/profilePage/logoutIcon.svg"
-
+import Loggito from "../../utils/Loggito"
 import MobileMenu from "../HomePage/components/MobileMenu"
-import { Link } from "react-router-dom"
+import retrieveUser from "../../logic/users/retrieveUser"
+import { useNavigate, Link } from "react-router-dom"
 
+const logger = new Loggito("ProfilePage")
 function ProfilePage() {
+
+    const [user, setUser] = useState(null)
+
+    const navigate = useNavigate()
+
+    const onLogout = () => {
+        delete sessionStorage.token
+        logger.debug("user logout correctly")
+        navigate("/login")
+    }
+
+    useEffect(() => {
+        try {
+            retrieveUser(sessionStorage.token, (error, _user) => {
+                if (error) {
+                    alert(error.message)
+                    logger.error(error.message)
+
+                    onLogout()
+
+                    return
+                }
+
+                logger.debug(`user: ${_user.name} retrieved correctly`)
+                setUser(_user)
+                return
+            })
+        } catch (error) {
+            alert(error.message)
+            logger.error(error.message)
+        }
+    }, [])
+
     return <div className="profilePage">
         <div className="profilePage-header">
-            <Link to="/"><img src={backIcon} alt="back" className="profilePage-header--backIcon" /></Link>
+            <Link to="/"><img  src={backIcon} alt="back" className="profilePage-header--backIcon" /></Link>
             <div className="profilePage-header-container2">
                 <h1 className="profilePage-header--title">Your profile</h1>
-                <Link to={"/editprofile"}><img src={editIcon} alt="" className="profilePage-img--editIcon" /></Link>
             </div>
         </div>
         <div className="profilePage-img">
@@ -23,15 +57,15 @@ function ProfilePage() {
 
             <div className="profilePage-panel--header">
                 <h2 className="panel-info--title">Information</h2>
-                <img src={logoutIcon} alt="" className="panel-header--logout" />
+                <img onClick={onLogout} src={logoutIcon} alt="" className="panel-header--logout" />
             </div>
 
             <div className="profilePage-panel--info">
 
                 <h4 className="panel-info--nameTitle">Name</h4>
-                <p className="panel-info--name">User Name</p>
+                {user && <p className="panel-info--name">{user.name}</p>}
                 <h4 className="panel-info--mailTitle">Mail</h4>
-                <p className="panel-info--mail">User Email</p>
+                {user && <p className="panel-info--mail">{user.email}</p>}
             </div>
             {/* <div className="profilePage-panel--privacy">
             <h2 className="panel-privacy--title">Privacy and security</h2>

@@ -4,7 +4,7 @@ const { NotFoundError, AuthError } = require('errors')
 const authenticateUser = require('.')
 
 describe('authenticateUser', () => {
-    beforeAll(() => connect('mongodb://localhost:27017/postits-test'))
+    beforeAll(() => connect('mongodb://localhost:27017/aquo-test'))
 
     beforeEach(() => User.deleteMany())
 

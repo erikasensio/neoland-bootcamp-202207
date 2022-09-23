@@ -1,13 +1,13 @@
+require("dotenv").config()
+const mongoose = require("mongoose")
 const { connect, disconnect } = require('mongoose')
+const {
+    env: { MONGO_URL } 
+} = process
 const { User, Aquo } = require('./models')
 
-connect('mongodb://localhost:27017/postits')
-    // .then(() => {
-    //     return Promise.all([
-    //         User.deleteMany(),
-    //         aquo.deleteMany()
-    //     ])
-    // })
+connect(MONGO_URL)
+
     .then(() => Promise.all([User.deleteMany(), Aquo.deleteMany()]))
     .then(() => {
         const pepito = new User({
@@ -19,7 +19,6 @@ connect('mongodb://localhost:27017/postits')
         const wendy = new User({
             name: 'Wendy Darling',
             email: 'wendy@darling.com',
-            // email: 'pepito@grillo.com',
             password: '12312123'
         })
 
@@ -46,10 +45,10 @@ connect('mongodb://localhost:27017/postits')
     //     const [pepito, wendy, peter, james] = users
     //     ...
     .then(([pepito, wendy, peter, james]) => {
-        const aquo1 = new aquo({ user: pepito.id, name: 'Bedroom', type: "Aquarium" })
-        const aquo2 = new aquo({ user: wendy.id, name: 'Hall', type: "Plant" })
-        const aquo3 = new aquo({ user: peter.id, name: 'Kitchen', type: "Aquarium" })
-        const aquo4 = new aquo({ user: james.id, name: 'Garden', type: "Plant" })
+        const aquo1 = new Aquo({ user: pepito.id, name: "Habitacion", type: "aquarium", pin1: "20.00", pin2: "7.00", pin3: "ON", ip: "172.20.10.3" })
+        const aquo2 = new Aquo({ user: pepito.id, name: "Jardin", type: "plant", pin1: "3", pin2: "235", pin3: "ON", ip: "127.0.0.2" })
+        const aquo3 = new Aquo({ user: peter.id, name: "Jardin2", type: "plant", pin1: "10", pin2: "125", pin3: "OFF", ip: "127.0.0.3" })
+        const aquo4 = new Aquo({ user: james.id, name: "Sofa", type: "aquarium", pin1: "24.00", pin2: "9.00", pin3: "OFF", ip: "127.0.0.4" })
 
         return Promise.all([
             aquo1.save(),

@@ -68,14 +68,15 @@
 }
 
 .createPage-form--nameInput,
-.createPage-form--typeInput {
+.createPage-form--typeInput,
+.createPage-form--ipInput {
     display: flex;
     flex-direction: column;
     outline: none;
 }
 
 .createPage-form--label {
-    font-size: 20px;
+    font-size: 13px;
 }
 
 .createPage-form--submit {
@@ -84,7 +85,9 @@
     justify-content: center;
 }
 
-.createPage-form--submitButton {
+.createPage-form--submitButton{
+    text-align: center;
+    text-decoration: none;
     color: white;
     font-size: 20px;
     background-color: #1A5AFF;
@@ -95,7 +98,7 @@
     margin-bottom: 15px;
 }
 .createPage-form--standardTitle{
-    font-size: 20px;
+    font-size: 16px;
     margin-bottom: 0;
 }
 .createPage-form--standardInfo{
@@ -117,6 +120,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     border: 1px solid black;
     width: 80px;
     height: 80px;
@@ -124,9 +128,9 @@
     border-radius: 20px;
 }
 
-.createPage-form--input1,
-.createPage-form--input2,
-.createPage-form--input3{
+.createPage-form--pin1,
+.createPage-form--pin2,
+.createPage-form--pin3{
 display: flex;
 flex-direction: column;
 justify-content: center;

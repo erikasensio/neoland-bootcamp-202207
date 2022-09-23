@@ -24,7 +24,7 @@ function retrieveUser(token, callback) {
 
             const user = {
                 name: data.name,
-                email: data.username
+                email: data.email
             }
 
             callback(null, user)

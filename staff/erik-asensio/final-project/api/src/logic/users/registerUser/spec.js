@@ -4,7 +4,7 @@ const { DuplicityError, FormatError } = require('errors')
 const registerUser = require('.')
 
 describe('registerUser', () => {
-    beforeAll(() => connect('mongodb://localhost:27017/postits-test'))
+    beforeAll(() => connect('mongodb://localhost:27017/aquo-test'))
 
     beforeEach(() => User.deleteMany())
 

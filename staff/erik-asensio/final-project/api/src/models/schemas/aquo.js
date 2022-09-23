@@ -19,6 +19,22 @@ const aquo = new Schema({
     type: {
         type: String,
         required: true
+    },
+    pin1: {
+        type: String,
+        required: true
+    },
+    pin2: {
+        type: String,
+        required: true
+    },
+    pin3: {
+        type: String,
+        required: true
+    },
+    ip: {
+        type: String,
+        required: true
     }
 })
 

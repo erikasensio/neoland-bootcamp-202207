@@ -7,7 +7,11 @@ const { verifyObjectIdString } = require('../../utils')
  * Creates a note for a user.
  * 
  * @param {string} userId The user id.
- * @param {string} text The note text.
+ * @param {string} name The aquo type.
+ * @param {string} type The aquo type.
+ * @param {string} pin1 The pin1.
+ * @param {string} pin2 The pin1.
+ * @param {string} pin3 The pin1.
  * 
  * @returns {Promise}
  *
@@ -17,10 +21,14 @@ const { verifyObjectIdString } = require('../../utils')
  * @throws {NotFoundError} If the user is not found.
  * @throws {SystemError} If an error happens in db.
  */
-function createAquo(userId, name, type, input1, input2, input3) {
+function createAquo(userId, name, type, pin1, pin2, pin3, ip) {
     verifyObjectIdString(userId, 'user id')
-    validateString(name, 'text')
-    validateString(type, 'text')
+    validateString(name, "name")
+    validateString(type, "type")
+    validateString(pin1, "pin1")
+    validateString(pin2, "pin2")
+    validateString(pin3, "pin3")
+    validateString(ip, "ip")
 
     return User.findById(userId).lean()
         .catch(error => {
@@ -29,7 +37,7 @@ function createAquo(userId, name, type, input1, input2, input3) {
         .then(user => {
             if (!user) throw new NotFoundError(`user with id ${userId} not found`)
 
-            return Aquo.create({ user: user._id, name, type, input1, input2, input3 })
+            return Aquo.create({ user: user._id, name, type, pin1, pin2, pin3, ip})
                 .catch(error => {
                     throw new SystemError(error.message)
                 })

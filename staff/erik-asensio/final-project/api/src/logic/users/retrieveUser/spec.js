@@ -4,7 +4,7 @@ const { NotFoundError } = require('errors')
 const retrieveUser = require('.')
 
 describe('retrieveUser', () => {
-    beforeAll(() => connect('mongodb://localhost:27017/postits-test'))
+    beforeAll(() => connect('mongodb://localhost:27017/aquo-test'))
 
     beforeEach(() => User.deleteMany())
 

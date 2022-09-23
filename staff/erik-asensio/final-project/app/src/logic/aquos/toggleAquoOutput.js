@@ -1,8 +1,11 @@
 const API_URL = process.env.REACT_APP_API_URL
 
-function createAquo(token, name, type, pin1, pin2, pin3, ip, callback) {
+function toggleAquoOutput(token, aquoIp, pin, callback) {
     if (typeof token !== 'string') throw new TypeError('token is not a string')
     if (token.trim().length === 0) throw new Error('token is empty or blank')
+
+    if (typeof aquoIp !== 'string') throw new TypeError('aquoId is not a string')
+    if (aquoIp.trim().length === 0) throw new Error('aquoId is empty or blank')
 
     if (typeof callback !== 'function') throw new TypeError('callback is not a function')
 
@@ -17,21 +20,22 @@ function createAquo(token, name, type, pin1, pin2, pin3, ip, callback) {
             callback(new Error(`server error (${status})`))
         else if (status >= 400)
             callback(new Error(`client error (${status})`))
-        else if (status === 201)
+        else if (status === 200) {
+            const json = xhr.responseText
+
+            const aquo = JSON.parse(json)
+
             callback(null)
+        }
     }
 
     // request
 
-    xhr.open('POST', `${API_URL}/aquos`)
+    xhr.open('POST', `${API_URL}/aquos/${aquoIp}/${pin}`)
 
     xhr.setRequestHeader('Authorization', `Bearer ${token}`)
-    xhr.setRequestHeader('Content-type', 'application/json')
 
-    const json = JSON.stringify({ name, type, pin1, pin2, pin3, ip })
-
-    xhr.send(json)
+    xhr.send()
 }
 
-
-export default createAquo
+export default toggleAquoOutput

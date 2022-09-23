@@ -46,7 +46,7 @@
 .editPage-panel {
     width: 100%;
     height: 100%;
-    background-color: grey;
+    background-color: #D9D9D9;
     display: flex;
     border-radius: 24px 24px 0px 0px;
     justify-content: flex-end;
@@ -69,14 +69,15 @@
 }
 
 .editPage-form--nameInput,
-.editPage-form--typeInput {
+.editPage-form--typeInput, 
+.editPage-form--ipInput {
     display: flex;
     flex-direction: column;
     outline: none;
 }
 
 .editPage-form--label {
-    font-size: 20px;
+    font-size: 13px;
 }
 
 .editPage-form--submit {
@@ -96,7 +97,7 @@
     margin-bottom: 15px;
 }
 .editPage-form--standardTitle{
-    font-size: 20px;
+    font-size: 16px;
     margin-bottom: 0;
 }
 .editPage-form--standardInfo{
@@ -111,6 +112,7 @@
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 20px;
 }
 
@@ -118,6 +120,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     border: 1px solid black;
     width: 80px;
     height: 80px;
@@ -125,9 +128,9 @@
     border-radius: 20px;
 }
 
-.editPage-form--input1,
-.editPage-form--input2,
-.editPage-form--input3{
+.editPage-form--pin1,
+.editPage-form--pin2,
+.editPage-form--pin3{
 display: flex;
 flex-direction: column;
 justify-content: center;

@@ -2,11 +2,11 @@ import "./CreatePage.css"
 import backIcon from "../../img/createPage/backIcon.svg"
 import mainImg from "../../img/createPage/mainImage.png"
 import editIcon from "../../img/createPage/editIcon.svg"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import createAquo from "../../logic/aquos/createAquo"
 
 function CreatePage() {
-
+    const navigate = useNavigate()
     const handleFormSubmit = event => {
         event.preventDefault()
 
@@ -14,15 +14,17 @@ function CreatePage() {
 
         const name = form.name.value
         const type = form.type.value
-        const input1 = form.input1.value
-        const input2 = form.input2.value
-        const input3 = form.input3.value
+        const pin1 = form.pin1.value
+        const pin2 = form.pin2.value
+        const pin3 = form.pin3.value
+        const ip = form.ip.value
 
-        createAquo(sessionStorage.token, name, type, input1, input2, input3, error => {
-            if(error){
+        createAquo(sessionStorage.token, name, type, pin1, pin2, pin3, ip, error => {
+            if (error) {
                 alert(error.message)
                 console.error(error.message)
             }
+            navigate("/")
         })
     }
 
@@ -47,25 +49,30 @@ function CreatePage() {
                     <input type="text" id="type" className="createPage-form--typeInput createPage-form--input" />
                 </div>
 
+                <div className="createPage-form--ip">
+                    <label htmlFor="ip" className="createPage-form--ipLabel createPage-form--label">IP:</label>
+                    <input type="text" id="ip" className="createPage-form--ipInput createPage-form--input" />
+                </div>
+
                 <div className="createPage-form--standards">
                     <h3 className="createPage-form--standardTitle">Standard's:</h3>
                     <p className="createPage-form--standardInfo">Set the standard values, if these values exceeds you will be notified</p>
                 </div>
                 <div className="createPage-form--standardInputs">
 
-                    <div className="createPage-form--input1">
-                        <label htmlFor="input1" className="createPage-form--input1Label createPage-form--standardLabel">input1:</label>
-                        <input type="text" id="input1" className="createPage-form--input1Input createPage-form--standardInput" />
+                    <div className="createPage-form--pin1">
+                        <label htmlFor="pin1" className="createPage-form--input1Label createPage-form--standardLabel">pin1:</label>
+                        <input type="text" id="pin1" className="createPage-form--input1Input createPage-form--standardInput" />
                     </div>
 
-                    <div className="createPage-form--input2">
-                        <label htmlFor="input2" className="createPage-form--input2Label createPage-form--standardLabel">input2:</label>
-                        <input type="text" id="input2" className="createPage-form--input2Input createPage-form--standardInput" />
+                    <div className="createPage-form--pin2">
+                        <label htmlFor="pin2" className="createPage-form--input2Label createPage-form--standardLabel">pin2:</label>
+                        <input type="text" id="pin2" className="createPage-form--input2Input createPage-form--standardInput" />
                     </div>
 
-                    <div className="createPage-form--input3">
-                        <label htmlFor="input3" className="createPage-form--input3Label createPage-form--standardLabel">input3:</label>
-                        <input type="text" id="input3" className="createPage-form--input3Input createPage-form--standardInput" />
+                    <div className="createPage-form--pin3">
+                        <label htmlFor="pin3" className="createPage-form--input3Label createPage-form--standardLabel">pin3:</label>
+                        <input type="text" id="pin3" className="createPage-form--input3Input createPage-form--standardInput" />
                     </div>
                 </div>
                 <div className="createPage-form--submit">
